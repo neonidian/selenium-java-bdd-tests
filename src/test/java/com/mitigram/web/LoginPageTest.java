@@ -1,15 +1,13 @@
 package com.mitigram.web;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class LoginPageTest extends TestBase {
 
-    @Test
-    @DisplayName("Verify navigation to Login page from Home page 'Login' link in header")
+    @Test(description = "Verify navigation to Login page from Home page 'Login' link in header", priority = 1)
     public void verifyNavigationToLoginPageFromHomePageHeader() {
         homePage.goToMitigramHomePageByURL()
                 .navigateToLoginPageUsingHeader();
@@ -17,8 +15,7 @@ public class LoginPageTest extends TestBase {
         assertThat(loginPage.isLoginPageDisplayed(), is(true));
     }
 
-    @Test
-    @DisplayName("Verify navigation to Login page from Home page 'Login' link in footer")
+    @Test(description = "Verify navigation to Login page from Home page 'Login' link in footer", priority = 2)
     public void verifyNavigationToLoginPageFromHomePageFooter() {
         homePage.goToMitigramHomePageByURL()
                 .navigateToLoginPageUsingFooter();

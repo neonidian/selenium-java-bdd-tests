@@ -5,36 +5,38 @@ import com.mitigram.web.framework.browser.ChromeBrowser;
 import com.mitigram.web.framework.browser.EdgeBrowser;
 import com.mitigram.web.framework.browser.FirefoxBrowser;
 import com.mitigram.web.pages.HomePage;
+import com.mitigram.web.pages.LoginPage;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-abstract class TestBase {
+abstract public class TestBase extends AbstractTestNGCucumberTests {
 
     private static final String CHROME = "CHROME";
     private static final String FIREFOX = "FIREFOX";
     private static final String EDGE = "EDGE";
     private static final List<String> supportedBrowsers = Arrays.asList(CHROME, FIREFOX, EDGE);
-    protected BrowserActions browserActions;
+    protected static BrowserActions browserActions;
 
-    protected HomePage homePage;
-    protected com.mitigram.web.pages.LoginPage loginPage;
+    protected static HomePage homePage;
+    protected static LoginPage loginPage;
 
-    @BeforeEach
-    void setupBrowser() {
+    @BeforeTest(alwaysRun = true)
+    public void setupBrowser() {
         String browser = readBrowserFromConfiguration();
         startBrowser(browser);
         initializePages();
     }
 
-     @AfterEach
-     void exitBrowser() {
+     @AfterTest(alwaysRun = true)
+     public void exitBrowser() {
          browserActions.exitBrowser();
      }
 
@@ -54,7 +56,7 @@ abstract class TestBase {
             }
             default: {
                 throw new RuntimeException(
-                        String.format("***** Browser %s not implemented in repository. Supported browsers - %s",
+                        String.format("***** Browser %s not implemented in this repository. Supported browsers - %s",
                                 browser, supportedBrowsers));
             }
         }
@@ -74,6 +76,6 @@ abstract class TestBase {
 
     private void initializePages() {
         homePage = new HomePage(browserActions);
-        loginPage = new com.mitigram.web.pages.LoginPage(browserActions);
+        loginPage = new LoginPage(browserActions);
     }
 }
