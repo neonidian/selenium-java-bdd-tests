@@ -12,3 +12,8 @@ Feature: Navigation to login page
   Scenario: Navigate to login page using login link in footer section
     When user clicks on the login link in the 'footer' section
     Then the login page is displayed
+
+  @low
+  Scenario: Navigation to login page using login page URL
+    When user uses the login URL in the browser
+    Then the login page is displayed
