@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        features = {"src/test/resources/com/mitigram/web/features/loginpage"},
+        features = {"src/test/resources/com/mitigram/web/features"},
         glue = {"com.mitigram.web.stepdefinitions"},
         tags = "@high",
         plugin = { "pretty", "html:build/cucumber-reports/regression-high-priority-tests.html" }

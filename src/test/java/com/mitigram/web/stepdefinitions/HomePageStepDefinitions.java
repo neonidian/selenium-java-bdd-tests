@@ -12,7 +12,7 @@ public class HomePageStepDefinitions extends TestBase {
     }
 
     @When("user clicks on the login link in the {string} section")
-    public void userClicksOnTheLoginLinkInTheHeaderSection(String headerOrFooter) {
+    public void userClicksOnTheLoginLink(String headerOrFooter) {
         if(headerOrFooter.equalsIgnoreCase("header")) {
             homePage.navigateToLoginPageUsingHeader();
         } else if(headerOrFooter.equalsIgnoreCase("footer")){
@@ -20,5 +20,10 @@ public class HomePageStepDefinitions extends TestBase {
         } else {
             throw new RuntimeException("Invalid parameter passed - " + headerOrFooter);
         }
+    }
+
+    @When("user clicks on the careers link in the {string} section")
+    public void userClicksOnTheCareersLinkInTheHeaderSection(String headerOrFooter) {
+        homePage.navigateToCareersPageUsingHeader();
     }
 }

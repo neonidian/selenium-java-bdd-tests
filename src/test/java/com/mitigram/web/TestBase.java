@@ -4,6 +4,8 @@ import com.mitigram.web.framework.browser.BrowserActions;
 import com.mitigram.web.framework.browser.ChromeBrowser;
 import com.mitigram.web.framework.browser.EdgeBrowser;
 import com.mitigram.web.framework.browser.FirefoxBrowser;
+import com.mitigram.web.pages.CareersPage;
+import com.mitigram.web.pages.ForgotPasswordPage;
 import com.mitigram.web.pages.HomePage;
 import com.mitigram.web.pages.LoginPage;
 import com.mitigram.web.pages.UserAccountPage;
@@ -32,6 +34,8 @@ abstract public class TestBase {
     protected static HomePage homePage;
     protected static LoginPage loginPage;
     protected static UserAccountPage userAccountPage;
+    protected static ForgotPasswordPage forgotPasswordPage;
+    protected static CareersPage careersPage;
 
 
     @BeforeClass(alwaysRun = true)
@@ -94,5 +98,7 @@ abstract public class TestBase {
         homePage = new HomePage(browserActions);
         loginPage = new LoginPage(browserActions);
         userAccountPage = new UserAccountPage(browserActions);
+        forgotPasswordPage = new ForgotPasswordPage(browserActions);
+        careersPage = new CareersPage(browserActions);
     }
 }

@@ -1,3 +1,5 @@
+import java.nio.charset.StandardCharsets
+
 plugins {
     id 'java'
 }
@@ -21,10 +23,8 @@ dependencies {
 }
 
 java {
-    compileTestJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = StandardCharsets.UTF_8
 }
-
-test.finalizedBy('hightPriorityRegressionTests', 'lowPriorityRegressionTests')
 
 task hightPriorityRegressionTests(type: Test) {
     useTestNG() {
@@ -38,10 +38,16 @@ task lowPriorityRegressionTests(type: Test) {
     }
 }
 
+test {
+    useTestNG() {
+        suites 'src/test/resources/com/mitigram/web/testngrunners/lowpriorityregressiontests.xml',
+                'src/test/resources/com/mitigram/web/testngrunners/highpriorityregressiontests.xml'
+    }
+}
+
 tasks.withType(Test) {
     testLogging {
         events  = ['PASSED', 'FAILED', 'SKIPPED']
     }
     outputs.upToDateWhen { false }
-    failFast(true)
 }

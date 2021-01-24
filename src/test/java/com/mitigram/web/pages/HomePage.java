@@ -5,18 +5,18 @@ import com.mitigram.web.framework.browser.BrowserActions;
 
 public class HomePage {
     private final BrowserActions browserActions;
-    private static final String HOME_PAGE_NAME = "Home page ";
+    private static final String HOME_PAGE = "Home page ";
     private static final String HOME_PAGE_URL = "https://mitigram.com/";
-    private static final LocatorObject LOGIN_LINK_HEADER = new LocatorObject("//header/nav[@class='right']//a[text()='Login']", LocatorObject.XPATH, HOME_PAGE_NAME + "> Header section > Login link");
-    private static final LocatorObject LOGIN_LINK_FOOTER = new LocatorObject("//footer/nav[@class=\"menu\"]//a[text()=\"Login\"]", LocatorObject.XPATH, HOME_PAGE_NAME + "> Footer section > Login link");
+    private static final LocatorObject LOGIN_LINK_HEADER = new LocatorObject("//header/nav[@class='right']//a[text()='Login']", LocatorObject.XPATH, HOME_PAGE + "> Header section > Login link");
+    private static final LocatorObject LOGIN_LINK_FOOTER = new LocatorObject("//footer/nav[@class='menu']//a[text()='Login']", LocatorObject.XPATH, HOME_PAGE + "> Footer section > Login link");
+    private static final LocatorObject CAREERS_LINK_HEADER = new LocatorObject("//header/nav//a[text()='Careers']", LocatorObject.XPATH, HOME_PAGE + "> Header section > Careers link");
 
     public HomePage(BrowserActions browserActions) {
         this.browserActions = browserActions;
     }
 
-    public HomePage goToMitigramHomePageByURL() {
+    public void goToMitigramHomePageByURL() {
         browserActions.openURL(HOME_PAGE_URL);
-        return this;
     }
 
     public void navigateToLoginPageUsingHeader() {
@@ -25,5 +25,9 @@ public class HomePage {
 
     public void navigateToLoginPageUsingFooter() {
         browserActions.click(LOGIN_LINK_FOOTER);
+    }
+
+    public void navigateToCareersPageUsingHeader() {
+        browserActions.click(CAREERS_LINK_HEADER);
     }
 }
