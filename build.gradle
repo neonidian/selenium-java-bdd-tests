@@ -26,7 +26,7 @@ java {
     compileTestJava.options.encoding = StandardCharsets.UTF_8
 }
 
-task hightPriorityRegressionTests(type: Test) {
+task highPriorityRegressionTests(type: Test) {
     useTestNG() {
         suites 'src/test/resources/com/mitigram/web/testngrunners/highpriorityregressiontests.xml'
     }
