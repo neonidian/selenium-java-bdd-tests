@@ -8,19 +8,8 @@ repositories {
 
 defaultTasks('test')
 
-test {
-    useTestNG {
-        suites 'src/test/resources/testngregressionrunner.xml'
-    }
-    testLogging {
-        events  = ['PASSED', 'FAILED', 'SKIPPED']
-    }
-    outputs.upToDateWhen { false }
-    failFast(true)
-}
-
 dependencies {
-    testImplementation group: 'org.testng', name: 'testng', version: '6.9.+'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.3.+'
     testImplementation group: 'io.cucumber', name: 'cucumber-testng', version: '6.9.+'
     testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '6.9.+'
     testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.+'
@@ -33,4 +22,26 @@ dependencies {
 
 java {
     compileTestJava.options.encoding = 'UTF-8'
+}
+
+test.finalizedBy('hightPriorityRegressionTests', 'lowPriorityRegressionTests')
+
+task hightPriorityRegressionTests(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/com/mitigram/web/testngrunners/highpriorityregressiontests.xml'
+    }
+}
+
+task lowPriorityRegressionTests(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/com/mitigram/web/testngrunners/lowpriorityregressiontests.xml'
+    }
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events  = ['PASSED', 'FAILED', 'SKIPPED']
+    }
+    outputs.upToDateWhen { false }
+    failFast(true)
 }

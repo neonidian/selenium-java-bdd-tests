@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Regression tests" verbose="1" parallel="false">
-    <test name="Run regression tests based on risk">
-        <packages>
-            <package name="com.mitigram.web.regressiontestrunner" />
-        </packages>
-    </test>
-</suite>
