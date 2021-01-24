@@ -10,18 +10,18 @@ import org.testng.annotations.Test;
 @CucumberOptions(
         features = {"src/test/resources/com/mitigram/web/features/loginpage"},
         glue = {"com.mitigram.web.stepdefinitions"},
-        tags = "@low",
-        plugin = { "pretty", "html:build/cucumber-reports/regression-low-priority-tests.html" }
+        tags = "@high",
+        plugin = { "pretty", "html:build/cucumber-reports/regression-high-priority-tests.html" }
 )
-public class LowPriorityRegressionTest extends TestBase {
+public class HighPriorityRegressionTest extends TestBase {
 
     @DataProvider
     public Object[][] scenarios() {
         return testNGCucumberRunner.provideScenarios();
     }
 
-    @Test(dataProvider = "scenarios", description = "Low priority regression tests")
-    public void lowPriorityScenario(PickleWrapper pickle, FeatureWrapper cucumberFeatureWrapper) {
+    @Test(priority = 1, dataProvider = "scenarios", description = "High Runs Cucumber Feature")
+    public void highPriorityScenario(PickleWrapper pickle, FeatureWrapper cucumberFeatureWrapper) {
         testNGCucumberRunner.runScenario(pickle.getPickle());
     }
 }
