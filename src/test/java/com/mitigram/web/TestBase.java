@@ -6,6 +6,7 @@ import com.mitigram.web.framework.browser.EdgeBrowser;
 import com.mitigram.web.framework.browser.FirefoxBrowser;
 import com.mitigram.web.pages.HomePage;
 import com.mitigram.web.pages.LoginPage;
+import com.mitigram.web.pages.UserAccountPage;
 import io.cucumber.testng.TestNGCucumberRunner;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
@@ -30,6 +31,7 @@ abstract public class TestBase {
     protected TestNGCucumberRunner testNGCucumberRunner;
     protected static HomePage homePage;
     protected static LoginPage loginPage;
+    protected static UserAccountPage userAccountPage;
 
 
     @BeforeClass(alwaysRun = true)
@@ -91,5 +93,6 @@ abstract public class TestBase {
     private void initializePages() {
         homePage = new HomePage(browserActions);
         loginPage = new LoginPage(browserActions);
+        userAccountPage = new UserAccountPage(browserActions);
     }
 }
