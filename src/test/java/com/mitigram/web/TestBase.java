@@ -23,7 +23,7 @@ abstract public class TestBase extends AbstractTestNGCucumberTests {
     private static final String FIREFOX = "FIREFOX";
     private static final String EDGE = "EDGE";
     private static final List<String> supportedBrowsers = Arrays.asList(CHROME, FIREFOX, EDGE);
-    protected static BrowserActions browserActions;
+    protected BrowserActions browserActions;
 
     protected static HomePage homePage;
     protected static LoginPage loginPage;

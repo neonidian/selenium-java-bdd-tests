@@ -13,6 +13,12 @@ public class HomePageStepDefinitions extends TestBase {
 
     @When("user clicks on the login link in the {string} section")
     public void userClicksOnTheLoginLinkInTheHeaderSection(String headerOrFooter) {
-
+        if(headerOrFooter.equalsIgnoreCase("header")) {
+            homePage.navigateToLoginPageUsingHeader();
+        } else if(headerOrFooter.equalsIgnoreCase("footer")){
+            homePage.navigateToLoginPageUsingFooter();
+        } else {
+            throw new RuntimeException("Invalid parameter passed - " + headerOrFooter);
+        }
     }
 }

@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.is;
 
 public class LoginPageTest extends TestBase {
 
-    @Test(description = "Verify navigation to Login page from Home page 'Login' link in header", priority = 1)
+    @Test(description = "Verify navigation to Login page from Home page 'Login' link in header", priority = 3)
     public void verifyNavigationToLoginPageFromHomePageHeader() {
         homePage.goToMitigramHomePageByURL()
                 .navigateToLoginPageUsingHeader();
@@ -15,7 +15,7 @@ public class LoginPageTest extends TestBase {
         assertThat(loginPage.isLoginPageDisplayed(), is(true));
     }
 
-    @Test(description = "Verify navigation to Login page from Home page 'Login' link in footer", priority = 2)
+    @Test(description = "Verify navigation to Login page from Home page 'Login' link in footer", priority = 3)
     public void verifyNavigationToLoginPageFromHomePageFooter() {
         homePage.goToMitigramHomePageByURL()
                 .navigateToLoginPageUsingFooter();
