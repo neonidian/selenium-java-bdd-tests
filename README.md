@@ -1,7 +1,8 @@
-# Mitigram Website - Regression Tests
+# Mitigram Website Testing Using Java, Selenium and BDD
+Mitigram is a digital platform for trade financing. More info at https://mitigram.com/
 
 ## Overview
-* The repository contains browser based regression tests written in Ghekrin style(Given-When-Then) using Cucumber Java library
+* The repository contains browser based regression tests written in **Ghekrin style(Given-When-Then) using Cucumber Java library**
 * The Gherkin style feature tests are located at [src/test/resources/com/mitigram/web/features](src/test/resources/com/mitigram/web/features)
 * Pre-requisites to run the tests: Chrome browser, JDK 8 or higher is installed
 * To execute all the tests, open commandline -> go to this directory -> run `./gradlew`(Linux or Mac OS) or `gradlew`(Windows OS)
@@ -9,7 +10,7 @@
   and Cucumber generated test reports can be viewed at [build/cucumber-reports](build/cucumber-reports)
   
 ## Priority of regression tests
-* The priority of the regression tests in this repository are based on the critical functionalities of the application
+* The priority of the regression tests in this repository are based on the critical functionalities(which I think) of the application
 * Based on the criticality, they have been classified as 'high' or 'low' priority using Cucumber tags and these tags used
   in TestNG suite XML configuration
 * 'high' priority tests defined in this repository means that these tests test the critical flow of the application 
@@ -39,7 +40,7 @@ E.g., In Linux or Mac, open command-line and use this command `./gradlew lowPrio
   to use system properties, XML configuration and more when needed
   
 ## Test framework
-* A test framework based on page object model is used. This enables reusability and easy maintenance
+* Page object model is used. This enables reusability and easy maintenance
 * The [pages package](src/test/java/com/mitigram/web/pages) defines the functionality to be performed in a web page
 * The [framework package](src/test/java/com/mitigram/web/framework) defines the Selenium based framework to perform actions in the browser
 * The [regressiontests package](src/test/java/com/mitigram/web/regressiontests) provides the glue code for Cucumber tests based on priority
