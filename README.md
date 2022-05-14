@@ -20,12 +20,22 @@ may not block a release
   
 ### Running high priority tests
 To run only _high_ priority tests use the command use the Gradle task `highPriorityRegressionTests`
-E.g., In Linux or Mac, open command-line and use this command `./gradlew highPriorityRegressionTests`
+E.g., In Linux or Mac, open command-line and use this command 
+```console
+./gradlew highPriorityRegressionTests
+```
 
 ### Running low priority tests
 To run only _low_ priority tests use the command use the Gradle task `lowPriorityRegressionTests`
-E.g., In Linux or Mac, open command-line and use this command `./gradlew lowPriorityRegressionTests`
-E.g., For Windows, open command-line like powershell and use this command `gradlew lowPriorityRegressionTests`
+E.g., 
+In Linux or Mac, open command-line and use this command 
+```console
+./gradlew lowPriorityRegressionTests
+```
+For Windows, open command-line like powershell and use this command 
+```console
+gradlew lowPriorityRegressionTests
+```
 
 ## Build system, libraries used
 * Gradle is used as the build system. Build file - [build.gradle](build.gradle)
