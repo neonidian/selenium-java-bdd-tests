@@ -1,4 +1,4 @@
-# Mitigram Website Testing Using Java, Selenium and BDD
+# Selenium with Java and BDD on Mitigram website
 Mitigram is a digital platform for trade financing. More info at https://mitigram.com/
 
 ## Overview
