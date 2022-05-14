@@ -4,7 +4,7 @@ Mitigram is a digital platform for trade financing. More info at https://mitigra
 ## Overview
 * The repository contains browser based regression tests written in **Ghekrin style(Given-When-Then) using Cucumber Java library**
 * The Gherkin style feature tests are located at [src/test/resources/com/mitigram/web/features](src/test/resources/com/mitigram/web/features)
-* Pre-requisites to run the tests: Chrome browser, JDK 8 or higher is installed
+* Pre-requisites to run the tests: Chrome browser, JDK installed
 * To execute all the tests, open commandline -> go to this directory -> run `./gradlew`(Linux or Mac OS) or `gradlew`(Windows OS)
 * After running the tests, the generated test reports can be viewed at [build/reports/tests/test/index.html](build/reports/tests/test/index.html) 
   and Cucumber generated test reports can be viewed at [build/cucumber-reports](build/cucumber-reports)
