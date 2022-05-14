@@ -40,7 +40,7 @@ E.g., In Linux or Mac, open command-line and use this command `./gradlew lowPrio
   to use system properties, XML configuration and more when needed
   
 ## Test framework
-* Page object model is used. This enables reusability and easy maintenance
+* Page object model is used
 * The [pages package](src/test/java/com/mitigram/web/pages) defines the functionality to be performed in a web page
 * The [framework package](src/test/java/com/mitigram/web/framework) defines the Selenium based framework to perform actions in the browser
 * The [regressiontests package](src/test/java/com/mitigram/web/regressiontests) provides the glue code for Cucumber tests based on priority
@@ -56,7 +56,3 @@ To run tests in any Java based IDE,
 2. Go to the glue code [directory](src/test/java/com/mitigram/web/regressiontests)
 3. Right-click the file you would like to run based on priority and select a context action 
    which says like _Run tests_
- 
-## Using this in a CI/CD system
-If these regression tests, were to be used in a CI/CD system like Jenkins, since the Gradle tasks are defined,
-the tests can be run in a pipeline starting with high priority tests so as to get quicker feedback when tests fail
