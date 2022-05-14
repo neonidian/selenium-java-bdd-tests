@@ -25,6 +25,7 @@ E.g., In Linux or Mac, open command-line and use this command `./gradlew highPri
 ### Running low priority tests
 To run only _low_ priority tests use the command use the Gradle task `lowPriorityRegressionTests`
 E.g., In Linux or Mac, open command-line and use this command `./gradlew lowPriorityRegressionTests`
+E.g., For Windows, open command-line like powershell and use this command `gradlew lowPriorityRegressionTests`
 
 ## Build system, libraries used
 * Gradle is used as the build system. Build file - [build.gradle](build.gradle)
